@@ -18,14 +18,17 @@
                         $query = mysqli_query($koneksi, "SELECT * FROM kategori");
                         while ($data = mysqli_fetch_array($query)) {
                         ?>
-                            <tr>
-                                <td><?php echo $i++; ?></td>
-                                <td><?php echo htmlspecialchars($data['kategori']); ?></td>
-                                <td class="text-center">
-                                    <a href="?page=kategori_ubah&id=<?php echo $data['id_kategori']; ?>" class="btn btn-info btn-sm mb-1">Ubah</a>
-                                    <a onclick="return confirm('Apakah anda yakin menghapus data ini?');" href="?page=kategori_hapus&id=<?php echo $data['id_kategori']; ?>" class="btn btn-danger btn-sm">Hapus</a>
-                                </td>
-                            </tr>
+                        <tr>
+                            <td><?php echo $i++; ?></td>
+                            <td><?php echo htmlspecialchars($data['kategori']); ?></td>
+                            <td class="text-center">
+                                <a href="?page=kategori_ubah&id=<?php echo $data['id_kategori']; ?>"
+                                    class="btn btn-info btn-sm mb-1">Ubah</a>
+                                <a onclick="return confirm('Apakah anda yakin menghapus data ini?');"
+                                    href="?page=kategori_hapus&id=<?php echo $data['id_kategori']; ?>"
+                                    class="btn btn-danger btn-sm">Hapus</a>
+                            </td>
+                        </tr>
                         <?php
                         }
                         ?>
